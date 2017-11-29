@@ -119,7 +119,7 @@ port() {
 
 # type — cracd app_name — to run create-react-app and cd in
 cracd () { 
-    reactme "$1" && cd "$1" && ignoreec
+    create-react-app $1 && cd $1 && echo -e "\n.env\nconfig.js" >> .gitignore
 }
 
 
