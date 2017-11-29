@@ -107,7 +107,7 @@ browser() {
 
 # type — port #### — to delete PORT variable and add new one
 port() {
-    sed -i '' "s/PORT=.[[:alnum:]]* //" package.json
+    sed -i '' "s/PORT=[[:alnum:]]* //" package.json
     json -If package.json -e 'this.scripts.start = "PORT='$1' " + this.scripts.start'
 }
 
