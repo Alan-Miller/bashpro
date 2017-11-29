@@ -14,34 +14,40 @@ alias bashhistory='open -a Visual\ Studio\ Code ~/.bash_history'
 #	GIT
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
 
-gac() {
-     git add . && git commit -m "$1"
+# type — gac 'some commit message' — to add and commit with message
+gac() { 
+    git add . && git commit -m "$1"
 }
 
-gacp() {
-     git add . && git commit -m "$1" && git push
+# type — gacp 'some commit message' — to add, commit, and push with message
+gacp() { 
+    git add . && git commit -m "$1" && git push
 }
 
-gccd() {
-  git clone "$1" && cd "$(basename "$1")"
+# type — gccd http://github.com/GitHub-Name/repository-name — to clone repo and cd in
+gccd() { 
+    git clone "$1" && cd "$(basename "$1")"
 }
 
-gitopen() {
-    # open current git repo in browser
+# type — gitopen — open current folder's git repo in browser
+gitopen() { 
     open $(git remote show origin | grep -o -m 1 'URL: [^[:space:]]*' | sed -e 's/URL: //')
     # -o option means only grep matching string
     # -m 1 option means return only first match
 }
 
-opengithub() {
+# type — opengithub repo-name — to open repo page in browser
+opengithub() { 
     open "https://github.com/Your-GitHub-Name/${1}"
 }
 
+alias g='git'
+alias gaep='git add . ; git commit --allow-empty -m "empty commit" ; git push' # allow empty commit
 alias garp='git add . ; git commit -m "readme edits" ; git push'
-alias gpsu='git push --set-upstream origin $1'
+alias gpsu='git push --set-upstream origin $1' # type — gpsu branch_name
 alias gdeleteorigin='git push -d origin $1'
 alias gdeletelocal='git branch -d $1'
-alias gdeletelocalf='git branch -D $1' #force
+alias gdeletelocalf='git branch -D $1' # forces delete
 
 
 
@@ -49,14 +55,14 @@ alias gdeletelocalf='git branch -D $1' #force
 #	HTML
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
 
+# type — title 'Your App Name' — to retitle app
 title () {
-    # retitle apps where index.html is at top of project folder
-    sed -i '' "s:<title>.*<:<title>$1<:" index.html
+    sed -i '' "s:<title>.*<:<title>$1<:" index.html # looks for index.html at top of project folder
 }
 
+# type — retitle 'Your App Name' — to retitle app
 retitle () {
-    # retitle React apps index.html is in public/ folder
-    sed -i '' "s:<title>.*<:<title>$1<:" public/index.html
+    sed -i '' "s:<title>.*<:<title>$1<:" public/index.html # looks for index.html in public/ folder
 }
 
 
@@ -66,8 +72,9 @@ retitle () {
 #   - Edit properties in package.json
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
 
-main() {
-    # $1 can use shorthand below to specify common filepaths
+# type — main path/to/server/file — to change this.main in package.json
+main() { 
+    # the following shorthand values for $1 specify common filepaths
     if [ $1 = i ]
     then
         filepath=index.js
@@ -81,27 +88,31 @@ main() {
     then
         filepath=server/server.js
     else
-        # otherwise $1 can spell out a different filepath
+        # otherwise the value can be whatever filepath is typed
         filepath=$1
     fi
     json -If package.json -e 'this.main = "'$filepath'"'
 }
 
-proxy() {
+# type — proxy port_number — to edit this.proxy in package.json
+proxy() { 
     json -If package.json -e 'this.proxy = "http://localhost:'$1'"' 
 }
 
-browser() {
-    #Find and delete any current BROWSER variable
+# type — browser none — OR — browser browser_name — OR — browser — to set BROWSER variable
+browser() { 
+    # delete current BROWSER variable
     sed -i '' "s/BROWSER=[[:alnum:]]* //" package.json 
-    #Add new BROWSER variable
-    json -If package.json -e 'this.scripts.start = "BROWSER='$1' " + this.scripts.start' 
+    # set $1 to none to prevent "npm start" from opening browser
+    # set $1 to Firefox or Safari to set those browsers
+    json -If package.json -e 'this.scripts.start = "BROWSER='$1' " + this.scripts.start'
 }
 
+# type — port #### — to edit PORT variable
 port() {
-    #Find and delete any current PORT variable
+    # find and delete any current PORT variable
     sed -i '' "s/PORT=.[[:alnum:]]* //" package.json 
-    #Add new PORT variable
+    # add new PORT variable
     json -If package.json -e 'this.scripts.start = "PORT='$1' " + this.scripts.start' 
 }
 
@@ -111,8 +122,8 @@ port() {
 #	REACT
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
 
-cracd () {
-    # run create-react-app and then cd into app
+# type — cracd app_name — to run create-react-app and cd in
+cracd () { 
     reactme "$1" && cd "$1" && ignoreec
 }
 
@@ -122,7 +133,8 @@ cracd () {
 #	SASS
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
 
-sassme() {
+# type — sassme — to install Sass in current folder
+sassme() { 
     # use bracket notation because command has issues with dot notation mixed with hyphenated properties
     npm install node-sass-chokidar && 
     json -If package.json -e 'this.scripts["build-css"] = "node-sass-chokidar src/ -o src/"' &&
