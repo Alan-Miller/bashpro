@@ -32,8 +32,7 @@ gccd() {
 # type — gitopen — open current folder's git repo in browser
 gitopen() { 
     open $(git remote show origin | grep -o -m 1 'URL: [^[:space:]]*' | sed -e 's/URL: //')
-    # -o option means only grep matching string
-    # -m 1 option means return only first match
+    # -o to grep matching string, -m 1 to return first match only
 }
 
 # type — opengithub repo-name — to open repo page in browser
@@ -74,7 +73,7 @@ retitle () {
 
 # type — main path/to/server/file — to change this.main in package.json
 main() { 
-    # the following shorthand values for $1 specify common filepaths
+    # shorthand values
     if [ $1 = i ]
     then
         filepath=index.js
@@ -88,7 +87,7 @@ main() {
     then
         filepath=server/server.js
     else
-        # otherwise the value can be whatever filepath is typed
+        # otherwise the value is whatever filepath is typed
         filepath=$1
     fi
     json -If package.json -e 'this.main = "'$filepath'"'
@@ -99,21 +98,17 @@ proxy() {
     json -If package.json -e 'this.proxy = "http://localhost:'$1'"' 
 }
 
-# type — browser none — OR — browser browser_name — OR — browser — to set BROWSER variable
-browser() { 
-    # delete current BROWSER variable
+# type — browser none — to prevent "npm start" from opening browser
+# type — browser browser_name — to set browser
+browser() {     
     sed -i '' "s/BROWSER=[[:alnum:]]* //" package.json 
-    # set $1 to none to prevent "npm start" from opening browser
-    # set $1 to Firefox or Safari to set those browsers
     json -If package.json -e 'this.scripts.start = "BROWSER='$1' " + this.scripts.start'
 }
 
-# type — port #### — to edit PORT variable
+# type — port #### — to delete PORT variable and add new one
 port() {
-    # find and delete any current PORT variable
-    sed -i '' "s/PORT=.[[:alnum:]]* //" package.json 
-    # add new PORT variable
-    json -If package.json -e 'this.scripts.start = "PORT='$1' " + this.scripts.start' 
+    sed -i '' "s/PORT=.[[:alnum:]]* //" package.json
+    json -If package.json -e 'this.scripts.start = "PORT='$1' " + this.scripts.start'
 }
 
 
@@ -135,7 +130,6 @@ cracd () {
 
 # type — sassme — to install Sass in current folder
 sassme() { 
-    # use bracket notation because command has issues with dot notation mixed with hyphenated properties
     npm install node-sass-chokidar && 
     json -If package.json -e 'this.scripts["build-css"] = "node-sass-chokidar src/ -o src/"' &&
     json -If package.json -e 'this.scripts["watch-css"] = "npm run build-css && node-sass-chokidar src/ -o src/ --watch --recursive"' &&
