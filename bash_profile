@@ -31,7 +31,7 @@ gccd() {
 
 # type — gitopen — open current folder's git repo in browser
 gitopen() { 
-    open $(git remote show origin | grep -o -m 1 'URL: [^[:space:]]*' | sed -e 's/URL: //')
+    open $(git remote show origin | grep -o -m 1 'http[^[:space:]]*github\.com[^[:space:]]*')
     # -o to grep matching string, -m 1 to return first match only
 }
 
