@@ -39,7 +39,6 @@ gitopen() {
 opengithub() { 
     open "https://github.com/Your-GitHub-Name/${1}"
 }
-
 alias g='git'
 alias gaep='git add . ; git commit --allow-empty -m "empty commit" ; git push' # allow empty commit
 alias garp='git add . ; git commit -m "readme edits" ; git push'
@@ -47,6 +46,8 @@ alias gpsu='git push --set-upstream origin $1' # type — gpsu branch_name
 alias gdeleteorigin='git push -d origin $1'
 alias gdeletelocal='git branch -d $1'
 alias gdeletelocalf='git branch -D $1' # forces delete
+alias gice='echo -e "config.js\n.env" >> .gitignore'
+alias gi='echo -e "'$1'" >> .gitignore'
 
 
 
@@ -119,7 +120,7 @@ port() {
 
 # type — cracd app_name — to run create-react-app and cd in
 cracd () { 
-    create-react-app $1 && cd $1 && echo -e "\n.env\nconfig.js" >> .gitignore
+    create-react-app $1 && cd $1
 }
 
 
