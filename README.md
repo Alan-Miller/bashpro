@@ -41,5 +41,34 @@ Aliases are alternative ways of calling something that already exists. In the ex
 alias g=git
 ```
 
-### Function
+## Loops
+- Start with ```if```.
+- Use square brackets (```[]```) around the condition.
+- Use ```elif``` for "else if" statements.
+- For both ```if``` and ```elif```, begin the following code block with ```then```.
+- Use ```else``` for "else statements (no ```then``` needed).
+- End loop with ```fi``` ("if" backwards).
+
+Example:
+```sh
+if [ $typed_path = s ]
+then
+    echo 'server.js'
+elif [ $typed_path = ss ]
+then
+    echo 'server/server.js'
+else
+    echo $typed_path
+fi
+```
+
+## Functions
 Functions gives us a lot of flexibility.
+- Invoke the function by simply writing its name in the command line (no parentheses).
+- Pass in arguments by simply writing in arguments after the function name (separated by spaces). For example, ```hike north south``` uses a function called ```hike``` and passes in ```'north'``` for the first argument and ```'south'``` for the second.
+
+## Commands
+
+###### sed
+```echo``` prints.
+```sed``` is for find and replace.
