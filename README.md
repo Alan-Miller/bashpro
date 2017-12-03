@@ -145,4 +145,7 @@ alias g=git
     ```sh
     touch example.txt ; nano example.txt
     ```
-    - ```&&``` runs one command after another only if the first one runs without any errors. For example, with the commands above, the second will only proceed if the first was successful.
+    - ```&&``` runs one command after another only if the first one runs without any errors. For example, with the commands below, the second will only proceed if the first was successful.
+    ```sh
+    touch example.txt ; nano example.txt
+    ```
