@@ -51,7 +51,42 @@ Expansion refers to how a word is interpreted.
 
 ###### Bracket expansion with ```{}```
 
-###### Variable expansion
+###### Variable expansion with ```$``` or ```${}```
+```$``` will expand a word as a variable. 
+```sh
+msg=howdy
+echo msg # --> msg
+echo $msg # --> howdy
+```
+Use ```{}``` when needed to avoid ambiguity. ```{}``` separates the variable from other things.
+```sh
+tree=bird
+house=man
+treehouse=kid
+echo treehouse # --> treehouse
+echo $treehouse # --> kid
+echo $tree # --> bird
+echo $tree$house # --> birdman
+echo tree$house # --> treeman
+echo ${tree}house # --> birdhouse
+```
+
+###### Command substitution with ```$()```
+
+###### Single quotes ```''```
+- Evaluated dynamically.
+- Variables are *not* evaluated inside.
+- Have no value inside double quotes (e.g., ```"''"```) unless escaped (```"\`"```).
+- Can*not* access array inside single quotes.
+
+###### Double quotes ```""```
+- Evaluated at time of creation. Never changes.
+- Variables are expanded inside.
+- Simply become literal double quotes when inside single quotes (e.g., ```'""'```).
+- Is interpreted when escaped inside double quotes (e.g., ```"\""```).
+- Can access array inside quotes.
+
+###### Backticks ``` `` ```
 
 ***
 
