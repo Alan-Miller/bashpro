@@ -72,7 +72,8 @@ echo $tree$house # --> birdman
 echo tree$house # --> treeman
 ```
 
-###### Command substitution with ```$()```
+###### Command substitution with ```$()``` or ``` `` ```
+
 
 ###### Single quotes ```''```
 - Evaluated dynamically.
@@ -86,8 +87,6 @@ echo tree$house # --> treeman
 - Simply become literal double quotes when inside single quotes (e.g., ```'""'```).
 - Is interpreted when escaped inside double quotes (e.g., ```"\""```).
 - Can access array inside quotes.
-
-###### Backticks ``` `` ```
 
 ***
 
@@ -141,3 +140,9 @@ alias g=git
     - ```-I``` option: Edit in place.
     - ```-e``` Evaluate the following string as JavaScript.
     - Example: ```json -If package.json -e 'this.scripts.start = "PORT='$1' " + this.scripts.start'```
+- Chain commands with semicolon (```;```) or double ampersand (```&&```).
+    - ```;``` runs one command after another. For example, with the commands below, the second will try to run regardless of whether the first succeeded or failed.
+    ```sh
+    touch example.txt ; nano example.txt
+    ```
+    - ```&&``` runs one command after another only if the first one runs without any errors. For example, with the commands above, the second will only proceed if the first was successful.
