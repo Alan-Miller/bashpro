@@ -46,9 +46,19 @@ Changes which editor is used when Git asks for commit message.
 
 ***
 
+## Expansion
+Expansion refers to how a word is interpreted.
+
+###### Bracket expansion with ```{}```
+
+###### Variable expansion
+
+***
+
 ## Loops
 - Start with ```if```.
 - Use square brackets (```[]```) around the condition.
+    - ```-z```: Length is zero (e.g., ```if [ -z $1 ]``` checks whether ```$1``` had zero length (i.e., was not passed or is an empty string)).
 - Use ```elif``` for "else if" statements.
 - For both ```if``` and ```elif```, begin the following code block with ```then```.
 - Use ```else``` for "else statements (no ```then``` needed).
