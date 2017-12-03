@@ -88,5 +88,10 @@ alias g=git
 ## Commands
 
 ###### sed
-```echo``` prints.
-```sed``` is for find and replace.
+- ```echo``` prints.
+- ```sed``` is for find and replace.
+- ```json``` is for editing JSON. Before you can use it, you must install with ```npm i -g json```.
+    - ```-f``` option: Edit a file. Follow this option with the name of a file you want to edit.
+    - ```-I``` option: Edit in place.
+    - ```-e``` Evaluate the following string as JavaScript.
+    - Example: ```json -If package.json -e 'this.scripts.start = "PORT='$1' " + this.scripts.start'```
