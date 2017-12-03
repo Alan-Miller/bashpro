@@ -64,8 +64,9 @@ tree=bird
 house=man
 treehouse=kid
 echo treehouse # --> treehouse
-echo $treehouse # --> kid
 echo $tree # --> bird
+echo $house # --> man
+echo $treehouse # --> kid
 echo $tree$house # --> birdman
 echo tree$house # --> treeman
 echo ${tree}house # --> birdhouse
