@@ -67,9 +67,9 @@ echo treehouse # --> treehouse
 echo $tree # --> bird
 echo $house # --> man
 echo $treehouse # --> kid
+echo ${tree}house # --> birdhouse
 echo $tree$house # --> birdman
 echo tree$house # --> treeman
-echo ${tree}house # --> birdhouse
 ```
 
 ###### Command substitution with ```$()```
