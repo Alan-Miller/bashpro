@@ -3,9 +3,8 @@
 ## Basic ommands
 
 `ls` &nbsp; List files in the active folder.
-
-options:
 ```sh
+#   OPTIONS:
 -a  # hidden files, too
 -l  # details
 -r  # reverse
@@ -14,15 +13,14 @@ options:
 ```
 
 `cd` &nbsp; Navigate to other files.
-
-possible paths:
-    ```sh
-    .  # current directory
-    .. # parent directory
-    -  # previous folder
-    /  # start at root folder
-    ~  # start at home folder
-    ```
+```sh
+#   POSSIBLE PATHS:
+.  # current directory
+.. # parent directory
+-  # previous folder
+/  # start at root folder
+~  # start at home folder
+```
 
 ###### files: &nbsp; `touch` and `rm`
 - To make a file, use `touch` and a file name.
