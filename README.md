@@ -16,13 +16,13 @@ options:
 `cd` &nbsp; Navigate to other files.
 
 possible paths:
-```sh
-.  # current directory
-.. # parent directory
--  # previous folder
-/  # start at root folder
-~  # start at home folder
-```
+    ```sh
+    .  # current directory
+    .. # parent directory
+    -  # previous folder
+    /  # start at root folder
+    ~  # start at home folder
+    ```
 
 ###### files: &nbsp; `touch` and `rm`
 - To make a file, use `touch` and a file name.
