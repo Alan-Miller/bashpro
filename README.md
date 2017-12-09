@@ -2,7 +2,7 @@
 
 ## Commands
 
-###### list:  &nbsp; `ls`
+###### list: &nbsp; `ls`
 - To list files in the active folder, use `ls`. 
 - options:
     - `-a` &nbsp; hidden files, too
@@ -11,18 +11,48 @@
     - `-S` &nbsp; order by file size
     - `-t` &nbsp; order by file time
 
-###### change directory:  &nbsp; `cd`
+###### change directory: &nbsp; `cd`
 - To navigate to other files, use `cd` and a path.
 - possible paths:
     - `.` &nbsp; current directory
     - `..` parent directory
-- options:
-    - 
+    - `-`  &nbsp; previous folder
+    - `/` &nbsp; start at root folder
+    - `~` &nbsp; start at home folder
 
-###### print:  &nbsp; `echo`
+###### files: &nbsp; `touch` and `rm`
+- To make a file, use `touch` and a file name.
+- To remove a file, use `rm` and a file name.
+- optional file names: 
+    - `*` &nbsp; all files
+- options:
+    - `-r` &nbsp; recursive
+    - `-f` &nbsp; force
+
+###### folders: &nbsp; `mkdir` and `rmdir`
+- To make a file, use `mkdir` and a folder name.
+- To remove an empty file, use `rmdir` and a folder name.
+- To remove a folder and all files and subfolders, use `rm -rf` and a folder name.
+- For example:
+```sh
+rm -rf ./Folder_Full_of_Files
+```
+
+###### print: &nbsp; `echo`
 - To print something, use `echo`.
 
-###### chain:  &nbsp; `;` and `&&`
+###### concat: &nbsp; `cat`
+- To show contents of one or more files, use `cat` and one or more file paths.
+- For example:
+```sh
+cat employee1.txt employee2.txt
+```
+
+###### more and less: &nbsp; `more` and `less`
+- To show contents one screen at a time, use `more` or `less` and one or more file names.
+
+
+###### chain: &nbsp; `;` and `&&`
 - `;`  &nbsp; runs one command and then another. With the commands below, the second will try to run regardless of whether the first succeeded or failed.
 ```sh
 touch example.txt ; nano example.txt
@@ -32,11 +62,40 @@ touch example.txt ; nano example.txt
 touch example.txt && nano example.txt
 ```
 
-###### find and replace:  &nbsp; `sed`
+###### up
+- To populate the command line with the previous command, press up.
+
+###### substitute: &nbsp; `^`
+- To swap out part of the previous command for something else, use `^` with the part to swap out and another   `^` with the part to swap in.
+- For examples, if you make a typo in a long command and don't want to retype the whole command, replace the typo with the correction using `^`.
+```sh
+mr ~/Desktop/fotos/holidays/Thanksgiving/pre-dinner-bash/IMG_7477.jpg
+```
+```sh
+^mr^rm
+```
+
+###### redirect: &nbsp; `>` and `<`
+- To redirect the output of a command to a file or stream, use `>` between the command and the file name.
+```sh
+somecommand > temp_file
+```
+- To run a command with the contents of a file, use `<` between the command and the file name.
+```sh
+somecommand < temp_file
+```
+
+###### pipe: &nbsp; `|`
+- To pipe output from one command to another command, use `|`.
+```sh
+pg_dump mydb | heroku pg:psql -a mydb
+```
+
+###### find and replace: &nbsp; `sed`
 
 - `sed` is for find and replace.
 
-###### edit JSON:  &nbsp; `json`
+###### edit JSON: &nbsp; `json`
 - `json` is for editing JSON. Before you can use it, you must install with `npm i -g json`.
     - `-f` option: Edit a file. Follow this option with the name of a file you want to edit.
     - `-I` option: Edit in place.
