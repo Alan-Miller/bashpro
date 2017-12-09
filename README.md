@@ -48,13 +48,12 @@ touch example.txt ; nano example.txt
 touch example.txt && nano example.txt
 ```
 
-###### up
-- To populate the command line with the previous command, press up.
+up: Populate the command line with the previous command.
 
-###### sudo: &nbsp; `sudo`
+`sudo`: Use admin credentials to run commands that require permission.
 - 
 
-`history`: To see your bash history (i.e., the contents of ~/.bash_history), use `history`.
+`history`: See your bash history (i.e., the contents of ~/.bash_history).
 
 ***
 
