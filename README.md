@@ -188,7 +188,7 @@ echo tree$house # --> treeman
 
 ***
 
-## Loops
+## For loops
 - Start with `for`.
 - Declare a variable name.
 - Use `;` to separate lines.
