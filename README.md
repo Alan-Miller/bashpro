@@ -4,13 +4,12 @@
 
 `ls` &nbsp; List files in the active folder.
 
-    `-a` &nbsp; hidden files, too
-
-    `-l` &nbsp; details
-    
-    `-r` &nbsp; reverse
-    `-S` &nbsp; order by file size
-    `-t` &nbsp; order by file time
+    options:
+    - -a    hidden files, too
+    - `-l` &nbsp; details
+    - `-r` &nbsp; reverse
+    - `-S` &nbsp; order by file size
+    - `-t` &nbsp; order by file time
 
 ###### change directory: &nbsp; `cd`
 - To navigate to other files, use `cd` and a path.
