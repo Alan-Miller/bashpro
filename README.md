@@ -5,7 +5,7 @@
 `ls` &nbsp; List files in the active folder.
 
     options:
-    -a  hidden files, too
+    -a  # hidden files, too
     -l  &nbsp; details
     -r  &nbsp; reverse
     -S  &nbsp; order by file size
