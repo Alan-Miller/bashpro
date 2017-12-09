@@ -1,6 +1,6 @@
 # Bash
 
-## Commands
+## Basic ommands
 
 ###### list: &nbsp; `ls`
 - To list files in the active folder, use `ls`. 
@@ -38,20 +38,6 @@
 rm -rf ./Folder_Full_of_Files
 ```
 
-###### print: &nbsp; `echo`
-- To print something, use `echo`.
-
-###### concat: &nbsp; `cat`
-- To show contents of one or more files, use `cat` and one or more file paths.
-- For example:
-```sh
-cat employee1.txt employee2.txt
-```
-
-###### more and less: &nbsp; `more` and `less`
-- To show contents one screen at a time, use `more` or `less` and one or more file names.
-
-
 ###### chain: &nbsp; `;` and `&&`
 - `;`  &nbsp; runs one command and then another. With the commands below, the second will try to run regardless of whether the first succeeded or failed.
 ```sh
@@ -64,6 +50,27 @@ touch example.txt && nano example.txt
 
 ###### up
 - To populate the command line with the previous command, press up.
+
+###### sudo: &nbsp; `sudo`
+- 
+
+###### history: &nbsp; `history`
+To see your bash history (i.e., the contents of ~/.bash_history), use `history`.
+
+***
+
+###### print: &nbsp; `echo`
+- To print something, use `echo`.
+
+###### concat: &nbsp; `cat`
+- To show contents of one or more files, use `cat` and one or more file paths.
+- For example:
+```sh
+cat employee1.txt employee2.txt
+```
+
+###### more and less: &nbsp; `more` and `less`
+- To show contents one screen at a time, use `more` or `less` and one or more file names.
 
 ###### substitute: &nbsp; `^`
 - To swap out part of the previous command for something else, use `^` with the part to swap out and another   `^` with the part to swap in.
@@ -88,9 +95,6 @@ somecommand < temp_file
 ```sh
 ls -al | more
 ```
-
-###### history: &nbsp; `history`
-- To see your bash history (i.e., the contents of ~/.bash_history), use `history`.
 
 ###### find and replace: &nbsp; `sed`
 
