@@ -153,8 +153,9 @@ alias g=git
     - Example: `json -If package.json -e 'this.scripts.start = "PORT='$1' " + this.scripts.start'`
 - Chain commands with semicolon (`;`) or double ampersand (`&&`).
     - `;` runs one command after another. For example, with the commands below, the second will try to run regardless of whether the first succeeded or failed.
-    `sh
+    ```sh
     touch example.txt ; nano example.txt
+    ```
     - `&&` runs one command after another only if the first one runs without any errors. For example, with the commands below, the second will only proceed if the first was successful.
     ```sh
     touch example.txt && nano example.txt
