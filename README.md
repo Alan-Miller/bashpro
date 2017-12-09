@@ -189,6 +189,18 @@ echo tree$house # --> treeman
 ***
 
 ## Loops
+- Start with `for`.
+- Declare a variable name.
+- Use `;` to separate lines.
+- Use `do` to start code block.
+- Use `$` to expand variables.
+- Use `done` to end code block.
+```sh
+for i in *.txt; do echo $i; done
+```
+
+
+## If statements
 - Start with `if`.
 - Use square brackets (`[]`) around the condition.
 - `-z`: Length is zero. For example: `if [ -z $1 ]`
