@@ -13,14 +13,16 @@ options:
 -t  # order by file time
 ```
 
-###### change directory: &nbsp; `cd`
-- To navigate to other files, use `cd` and a path.
-- possible paths:
-    - `.` &nbsp; current directory
-    - `..` parent directory
-    - `-`  &nbsp; previous folder
-    - `/` &nbsp; start at root folder
-    - `~` &nbsp; start at home folder
+`cd` &nbsp; Navigate to other files.
+
+possible paths:
+```sh
+.  # current directory
+.. # parent directory
+-  # previous folder
+/  # start at root folder
+~  # start at home folder
+```
 
 ###### files: &nbsp; `touch` and `rm`
 - To make a file, use `touch` and a file name.
