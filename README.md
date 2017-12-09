@@ -4,7 +4,7 @@
 
 `ls` &nbsp; List files in the active folder.
 
-    options:
+| options:
     - `-a` &nbsp; hidden files, too
     - `-l` &nbsp; details
     - `-r` &nbsp; reverse
