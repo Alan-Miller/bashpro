@@ -1,8 +1,8 @@
 # Bash
 
-## Basic commands
+## Commands
 
-###### list
+###### list:  &nbsp; `ls`
 - To list files in the active folder, use `ls`. 
 - options:
     - `-a` &nbsp; hidden files, too
@@ -11,14 +11,40 @@
     - `-S` &nbsp; order by file size
     - `-t` &nbsp; order by file time
 
-###### change directory
+###### change directory:  &nbsp; `cd`
 - To navigate to other files, use `cd` and a path.
 - possible paths:
     - `.` &nbsp; current directory
     - `..` parent directory
 - options:
     - 
-            
+
+###### print:  &nbsp; `echo`
+- To print something, use `echo`.
+
+###### chain:  &nbsp; `;` and `&&`
+- `;`  &nbsp; runs one command and then another. With the commands below, the second will try to run regardless of whether the first succeeded or failed.
+```sh
+touch example.txt ; nano example.txt
+```
+- `&&`  &nbsp; runs one command after another only if the first one runs without any errors. With the commands below, the second will only proceed if the first was successful.
+```sh
+touch example.txt && nano example.txt
+```
+
+###### find and replace:  &nbsp; `sed`
+
+- `sed` is for find and replace.
+
+###### edit JSON:  &nbsp; `json`
+- `json` is for editing JSON. Before you can use it, you must install with `npm i -g json`.
+    - `-f` option: Edit a file. Follow this option with the name of a file you want to edit.
+    - `-I` option: Edit in place.
+    - `-e` Evaluate the following string as JavaScript.
+    - Example: `json -If package.json -e 'this.scripts.start = "PORT='$1' " + this.scripts.start'`
+
+
+***
 
 ## Variables
 Bash has built-in variables. These are generally indicated in all caps. Setting these variables
@@ -138,25 +164,3 @@ Aliases are alternative ways of calling something that already exists. In the ex
 ```sh
 alias g=git
 ```
-
-***
-
-## Commands
-
-###### sed
-- `echo` prints.
-- `sed` is for find and replace.
-- `json` is for editing JSON. Before you can use it, you must install with `npm i -g json`.
-    - `-f` option: Edit a file. Follow this option with the name of a file you want to edit.
-    - `-I` option: Edit in place.
-    - `-e` Evaluate the following string as JavaScript.
-    - Example: `json -If package.json -e 'this.scripts.start = "PORT='$1' " + this.scripts.start'`
-- Chain commands with semicolon (`;`) or double ampersand (`&&`).
-    - `;` runs one command after another. For example, with the commands below, the second will try to run regardless of whether the first succeeded or failed.
-    ```sh
-    touch example.txt ; nano example.txt
-    ```
-    - `&&` runs one command after another only if the first one runs without any errors. For example, with the commands below, the second will only proceed if the first was successful.
-    ```sh
-    touch example.txt && nano example.txt
-    ```
