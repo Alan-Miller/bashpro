@@ -54,8 +54,7 @@ touch example.txt && nano example.txt
 ###### sudo: &nbsp; `sudo`
 - 
 
-###### history: &nbsp; `history`
-To see your bash history (i.e., the contents of ~/.bash_history), use `history`.
+`history`: To see your bash history (i.e., the contents of ~/.bash_history), use `history`.
 
 ***
 
