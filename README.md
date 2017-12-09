@@ -7,10 +7,10 @@
 options:
 ```sh
 -a  # hidden files, too
--l  # &nbsp; details
--r  # &nbsp; reverse
--S  # &nbsp; order by file size
--t  # &nbsp; order by file time
+-l  # details
+-r  # reverse
+-S  # order by file size
+-t  # order by file time
 ```
 
 ###### change directory: &nbsp; `cd`
