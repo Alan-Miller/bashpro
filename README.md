@@ -51,6 +51,10 @@ touch example.txt && nano example.txt
 
 ↑ &nbsp; Populate the command line with the previous command.
 
+`!!` &nbsp; The last command you ran.
+
+`!$` &nbsp; The last argument you used.
+
 `sudo` &nbsp; Use admin credentials to run commands that require permission.
 
 `history` &nbsp; See your bash history (i.e., the contents of ~/.bash_history).
@@ -93,6 +97,9 @@ somecommand < temp_file
 ```sh
 ls -al | more
 ```
+
+###### find: `find`
+
 
 ###### find and replace: &nbsp; `sed`
 
