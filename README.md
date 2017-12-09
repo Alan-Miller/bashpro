@@ -51,7 +51,6 @@ touch example.txt && nano example.txt
 up: Populate the command line with the previous command.
 
 `sudo`: Use admin credentials to run commands that require permission.
-- 
 
 `history`: See your bash history (i.e., the contents of ~/.bash_history).
 
