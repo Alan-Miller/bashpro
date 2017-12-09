@@ -75,21 +75,22 @@ mr ~/Desktop/fotos/holidays/Thanksgiving/pre-dinner-bash/IMG_7477.jpg
 ^mr^rm
 ```
 
-###### redirect: &nbsp; `>` and `<`
+###### redirect: &nbsp; `>`, `<`, and `|`
 - To redirect the output of a command to a file or stream, use `>` between the command and the file name.
 ```sh
-somecommand > temp_file
+pg_dump mydb > mydb_bkup.sql
 ```
 - To run a command with the contents of a file, use `<` between the command and the file name.
 ```sh
 somecommand < temp_file
 ```
-
-###### pipe: &nbsp; `|`
 - To pipe output from one command to another command, use `|`.
 ```sh
-pg_dump mydb | heroku pg:psql -a mydb
+ls -al | more
 ```
+
+###### history: &nbsp; `history`
+- To see your bash history (i.e., the contents of ~/.bash_history), use `history`.
 
 ###### find and replace: &nbsp; `sed`
 
