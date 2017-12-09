@@ -5,21 +5,21 @@
 `ls` &nbsp; List files in the active folder.
 ```sh
 #   OPTIONS:
--a  # hidden files, too
--l  # details
--r  # reverse
--S  # order by file size
--t  # order by file time
+ls -a  # list hidden files, too
+ls -l  # list details
+ls -r  # list in reverse
+ls -S  # list order by file size
+ls -t  # list order by file time
 ```
 
 `cd` &nbsp; Navigate to other files.
 ```sh
 #   POSSIBLE PATHS:
-.  # current directory
-.. # parent directory
--  # previous folder
-/  # start at root folder
-~  # start at home folder
+cd .  # current directory
+cd .. # parent directory
+cd -  # previous directory
+cd /  # path starting at root folder
+cd ~  # path starting at home folder
 ```
 
 ###### files: &nbsp; `touch` and `rm`
