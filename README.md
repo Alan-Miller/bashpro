@@ -2,14 +2,14 @@
 
 ## Basic ommands
 
-###### list: &nbsp; `ls`
-- To list files in the active folder, use `ls`. 
-- options:
-    - `-a` &nbsp; hidden files, too
-    - `-l` &nbsp; details
-    - `-r` &nbsp; reverse
-    - `-S` &nbsp; order by file size
-    - `-t` &nbsp; order by file time
+`ls` &nbsp; List files in the active folder.
+
+options:
+- `-a` &nbsp; hidden files, too
+- `-l` &nbsp; details
+- `-r` &nbsp; reverse
+- `-S` &nbsp; order by file size
+- `-t` &nbsp; order by file time
 
 ###### change directory: &nbsp; `cd`
 - To navigate to other files, use `cd` and a path.
@@ -38,21 +38,20 @@
 rm -rf ./Folder_Full_of_Files
 ```
 
-###### chain: &nbsp; `;` and `&&`
-- `;`  &nbsp; runs one command and then another. With the commands below, the second will try to run regardless of whether the first succeeded or failed.
+`;` &nbsp; runs one command and then another. With the commands below, the second will try to run regardless of whether the first succeeded or failed.
 ```sh
 touch example.txt ; nano example.txt
 ```
-- `&&`  &nbsp; runs one command after another only if the first one runs without any errors. With the commands below, the second will only proceed if the first was successful.
+`&&` &nbsp; runs one command after another only if the first one runs without any errors. With the commands below, the second will only proceed if the first was successful.
 ```sh
 touch example.txt && nano example.txt
 ```
 
-up: Populate the command line with the previous command.
+↑ &nbsp; Populate the command line with the previous command.
 
-`sudo`: Use admin credentials to run commands that require permission.
+`sudo` &nbsp; Use admin credentials to run commands that require permission.
 
-`history`: See your bash history (i.e., the contents of ~/.bash_history).
+`history` &nbsp; See your bash history (i.e., the contents of ~/.bash_history).
 
 ***
 
