@@ -212,6 +212,8 @@ for i in *.txt; do echo $i; done
 - Use square brackets (`[]`) around the condition.
 - `-z`: Length is zero. For example: `if [ -z $1 ]`
 - `-n`: Length is not zero. For example: `if [ -n $1 ]`
+- `$#`: Number of arguments. For example: `if [ $# -eq 0 ]` means "if there are no arguments."
+- `$1`: First argument. For example: `if [ $1 ]` means "if there is a first argument."
 - Use `elif` for "else if" statements.
 - For both `if` and `elif`, begin the following code block with `then`.
 - Use `else` for "else statements (no `then` needed).
