@@ -1,132 +1,138 @@
 # Bash
 
-## Basic ommands
+## Basic commands
 
-`ls` &nbsp; List files in the active folder.
-```sh
-#   OPTIONS:
-ls -a  # list hidden files, too
-ls -l  # list details
-ls -r  # list in reverse
-ls -S  # list order by file size
-ls -t  # list order by file time
-```
+1. `ls` &nbsp; List files in the active folder.
+    ```sh
+    #   OPTIONS:
+    ls -a  # list hidden files, too
+    ls -l  # list details
+    ls -r  # list in reverse
+    ls -S  # list order by file size
+    ls -t  # list order by file time
+    ```
 
-`cd` &nbsp; Navigate to other files.
-```sh
-#   POSSIBLE PATHS:
-cd .  # current directory
-cd .. # parent directory
-cd -  # previous directory
-cd /  # path starting at root folder
-cd ~  # path starting at home folder
-```
+1. `cd` &nbsp; Navigate to other files.
+    ```sh
+    #   POSSIBLE PATHS:
+    cd .  # current directory
+    cd .. # parent directory
+    cd -  # previous directory
+    cd /  # path starting at root folder
+    cd ~  # path starting at home folder
+    ```
 
-###### files: &nbsp; `touch` and `rm`
-- To make a file, use `touch` and a file name.
-- To remove a file, use `rm` and a file name.
-- optional file names: 
-    - `*` &nbsp; all files
-- options:
-    - `-r` &nbsp; recursive
-    - `-f` &nbsp; force
+1. &nbsp; `touch` and `rm`
+    - To make a file, use `touch` and a file name.
+    - To remove a file, use `rm` and a file name.
+    - optional file names: 
+        - `*` &nbsp; all files
+    - options:
+        - `-r` &nbsp; recursive
+        - `-f` &nbsp; force
 
-###### folders: &nbsp; `mkdir` and `rmdir`
-- To make a file, use `mkdir` and a folder name.
-- To remove an empty file, use `rmdir` and a folder name.
-- To remove a folder and all files and subfolders, use `rm -rf` and a folder name.
-- For example:
-```sh
-rm -rf ./Folder_Full_of_Files
-```
+1. &nbsp; `mkdir` and `rmdir`
+    - To make a file, use `mkdir` and a folder name.
+    - To remove an empty file, use `rmdir` and a folder name.
+    - To remove a folder and all files and subfolders, use `rm -rf` and a folder name.
+    - For example:
+        ```sh
+        rm -rf ./Folder_Full_of_Files
+        ```
 
-`;` &nbsp; runs one command and then another. With the commands below, the second will try to run regardless of whether the first succeeded or failed.
-```sh
-touch example.txt ; nano example.txt
-```
-`&&` &nbsp; runs one command after another only if the first one runs without any errors. With the commands below, the second will only proceed if the first was successful.
-```sh
-touch example.txt && nano example.txt
-```
+1. `;` (semicolon) &nbsp; Runs one command after another. In the example below, the second will try to run regardless of whether the first succeeded.
+    ```sh
+    touch example.txt ; nano example.txt
+    ```
+1. `&&` &nbsp; Runs one command after another only if the first ran without any errors. In the xample below, the second will only proceed if the first was successful.
+    ```sh
+    touch example.txt && nano example.txt
+    ```
 
-↑ &nbsp; Populate the command line with the previous command.
+1. ↑ &nbsp; Populate the command line with the previous command.
 
-`!!` &nbsp; The last command you ran.
+1. `!!` &nbsp; The last command you ran.
 
-`!$` &nbsp; The last argument you used.
+1. `!$` &nbsp; The last argument you used.
 
-`sudo` &nbsp; Use admin credentials to run commands that require permission.
+1. `sudo` &nbsp; Use admin credentials to run commands that require permission.
 
-`history` &nbsp; See your bash history (i.e., the contents of ~/.bash_history).
+1. `history` &nbsp; See your bash history (i.e., the contents of ~/.bash_history).
 
-***
+1. `echo` &nbsp; Print something.
 
-###### print: &nbsp; `echo`
-- To print something, use `echo`.
+1. `printf` &nbsp; Print something.
 
-###### concat: &nbsp; `cat`
-- To show contents of one or more files, use `cat` and one or more file paths.
-- For example:
-```sh
-cat employee1.txt employee2.txt
-```
+1. `cat` &nbsp; Shows contents of one or more files.
+    ```sh
+    cat employee1.txt employee2.txt
+    ```
 
-###### more and less: &nbsp; `more` and `less`
-- To show contents one screen at a time, use `more` or `less` and one or more file names.
+1. `more` and `less`: &nbsp; Show contents one screen at a time. Use with one or more file names.
 
-###### substitute: &nbsp; `^`
-- To swap out part of the previous command for something else, use `^` with the part to swap out and another   `^` with the part to swap in.
-- For examples, if you make a typo in a long command and don't want to retype the whole command, replace the typo with the correction using `^`.
-```sh
-mr ~/Desktop/fotos/holidays/Thanksgiving/pre-dinner-bash/IMG_7477.jpg
-```
-```sh
-^mr^rm
-```
+1. `^` (carat) &nbsp; Substitute, swapping out part of the previous command for something else. For example, if you make a typo in a long command, such as typing `mr` instead of `rm`, and you don't want to retype the whole command, replace the typo with the correction using `^`.
+    ```sh
+    mr ~/Desktop/fotos/holidays/Thanksgiving/pre-dinner-bash/IMG_7477.jpg
 
-###### redirect: &nbsp; `>`, `<`, and `|`
-- To redirect the output of a command to a file or stream, use `>` between the command and the file name.
-```sh
-pg_dump mydb > mydb_bkup.sql
-```
-- To run a command with the contents of a file, use `<` between the command and the file name.
-```sh
-somecommand < temp_file
-```
-- To pipe output from one command to another command, use `|`.
-```sh
-ls -al | more
-```
+    ^mr^rm
+    ```
 
-###### find: `find`
+1. `>`, `<`, and `|` &nbsp; 
+    
+    To redirect the output of a command to a file or stream, use `>` between the command and the file name.
+    ```sh
+    pg_dump mydb > mydb_bkup.sql
+    ```
+    To run a command with the contents of a file, use `<` between the command and the file name.
+    ```sh
+    somecommand < temp_file
+    ```
+    To pipe output from one command to another command, use `|`.
+    ```sh
+    ls -al | more
+    ```
 
+1. `find` Find a file
 
-###### find and replace: &nbsp; `sed`
+1. `sed` &nbsp; Find and replace
 
-- `sed` is for find and replace.
-
-###### edit JSON: &nbsp; `json`
-- `json` is for editing JSON. Before you can use it, you must install with `npm i -g json`.
+1. `json` &nbsp; Edit JSON. Before you can use it, you must install with `npm i -g json`.
     - `-f` option: Edit a file. Follow this option with the name of a file you want to edit.
     - `-I` option: Edit in place.
     - `-e` Evaluate the following string as JavaScript.
     - Example: `json -If package.json -e 'this.scripts.start = "PORT='$1' " + this.scripts.start'`
 
+1. `ps aux` &nbsp; See all running processes.
+    - This command becomes more useful when combined with `grep` below, thereby limited the number of commands to what is relevant.
+    ```sh
+    ps aux | grep node
+    ```
+    - When using `ps aux | grep`, included in the commands shown will be the `grep` process itself. To avoid this false positive when running `ps aux`, encase the first letter of your `grep` argument with square brackets.
+    ```sh
+    ps aux | grep [r]code
+    ```
+1. `grep` (with `|`) &nbsp; Only show portion of a command's output, filtered by the argument.
+    ```sh
+    ps aux | grep node
+    ```
+1. `killall` &nbsp; Kill all processes with the given process name. 
+    - `killall` only matches the process name, not all the process's arguments, so it may not work when naming a bash script by name, since bash scripts run as an argument for bash and not as a distinct compiled program.
+1. `kill` &nbsp; Kill a process by process number.
+1. `pkill -f` &nbsp; Kill all processes by matching against processes *and* arguments. Unlike `killall`, this command can kill even bash scripts running as arguments of another program.
 
 ***
 
 ## Variables
-Bash has built-in variables. These are generally indicated in all caps. Setting these variables
+Bash has built-in variables. These are generally in all caps (so it is good practice to name new variables using at least one lowercase letter).
 
-###### PATH
+PATH
 Add paths for console commands.
 - Enclose in single quotes.
-- Start with period (`.`).
 - Separate path chunks with colon (`:`).
 - Finish by appending `$PATH` to the end.
 - Set `CDPATH=.:~/Docs:~/Music:$PATH` to add these chunks to the path.
 
-###### CDPATH
+CDPATH
 Add paths for the `cd` command.
 - Enclose in single quotes.
 - Start with period (`.`).
@@ -134,19 +140,19 @@ Add paths for the `cd` command.
 - Finish by appending `$CDPATH` to the end.
 - Set `CDPATH=.:~/Docs:~/Music:$CDPATH` to add these chunks to the path.
 
-###### HISTSIZE
+HISTSIZE
 Determines allowable size of .bash_history file.
 - Set `HISTSIZE=` for unlimited size.
 - Set `HISTSIZE=0` to disable bash history.
 - Set `HISTSIZE=500` to limit to 500 entries.
 
-###### HISTFILESIZE
+HISTFILESIZE
 Determines allowable size of .bash_history file.
 - Set `HISTFILESIZE=` for unlimited file size.
 - Set `HISTFILESIZE=0` to disable file size.
 - Set `HISTFILESIZE=500` to limit file size to 500.
 
-###### EDITOR
+EDITOR
 Changes which editor is used when Git asks for commit message.
 
 ***
@@ -154,9 +160,9 @@ Changes which editor is used when Git asks for commit message.
 ## Expansion
 Expansion refers to how a word is interpreted.
 
-###### Bracket expansion with `{}`
+Bracket expansion with `{}`
 
-###### Variable expansion with `$` or `${}`
+Variable expansion with `$` or `${}`
 `$` will expand a word as a variable. 
 ```sh
 msg=howdy
@@ -177,16 +183,16 @@ echo $tree$house # --> birdman
 echo tree$house # --> treeman
 ```
 
-###### Command substitution with `$()` or ` `` `
+Command substitution with `$()` or ` `` `
 
 
-###### Single quotes `''`
+Single quotes `''`
 - Evaluated dynamically.
 - Variables are *not* evaluated inside.
 - Have no value inside double quotes (e.g., `"''"`) unless escaped (`"\`"`).
 - Can*not* access array inside single quotes.
 
-###### Double quotes `""`
+Double quotes `""`
 - Evaluated at time of creation. Never changes.
 - Variables are expanded inside.
 - Simply become literal double quotes when inside single quotes (e.g., `'""'`).
@@ -237,7 +243,10 @@ fi
 ## Functions
 Functions gives us a lot of flexibility.
 - Invoke the function by simply writing its name in the command line (no parentheses).
-- Pass in arguments by simply writing in arguments after the function name (separated by spaces). For example, `hike north south` uses a function called `hike` and passes in `'north'` for the first argument and `'south'` for the second.
+- Pass in arguments by simply writing in arguments after the function name (separated by spaces). For example, the following line uses a function called `hike` and passes in `'north'` for the first argument and `'south'` for the second.
+```sh
+hike north south
+```
 
 ***
 
@@ -247,3 +256,5 @@ Aliases are alternative ways of calling something that already exists. In the ex
 ```sh
 alias g=git
 ```
+
+***
