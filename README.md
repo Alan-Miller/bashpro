@@ -57,7 +57,7 @@
 
 1. `!-2` &nbsp; The second-most-recent command you have run.
 
-1. `!!:q` &nbsp; The last command you ran, enclosing the substitution in single quotes to prevent further expansion by the shell.
+1. `!!:q` &nbsp; The last command you ran, enclosing the substitution in single quotes to prevent further expansion.
 
 1. `!$` &nbsp; The last argument you used.
 
