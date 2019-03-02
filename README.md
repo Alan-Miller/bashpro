@@ -53,6 +53,12 @@
 
 1. `!!` &nbsp; The last command you ran.
 
+1. `!2` &nbsp; The second command you have ever run.
+
+1. `!-2` &nbsp; The second-most-recent command you have run.
+
+1. `!!:q` &nbsp; The last command you ran, enclosing the substitution in single quotes to prevent further expansion by the shell.
+
 1. `!$` &nbsp; The last argument you used.
 
 1. `sudo` &nbsp; Use admin credentials to run commands that require permission.
